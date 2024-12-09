@@ -11,7 +11,7 @@ This project demonstrates the implementation of a simple housing price predictio
 - [Evaluation Metrics](#evaluation-metrics)
 - [How to Use](#how-to-use)
 - [Output Examples](#output-examples)
-- [License](#license)
+
 
 ## Prerequisites
 
@@ -134,3 +134,7 @@ Coefficients:  [2000. 30000. 40000.]
 Intercept:  50000.0
 ```
 
+### Note:
+```
+Values may differ because, I considered random values here
+```
