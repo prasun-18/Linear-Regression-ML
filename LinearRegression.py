@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn import metrics
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 data = pd.read_csv("Data_Set\\Housing.csv")
@@ -28,8 +29,22 @@ new_data = pd.DataFrame({
     "area":[1234],
     "bedrooms":[2],
     "bathrooms":[2]
-}) #Price will be predicted for these specification area=1234, bedrooms=2, bathrooms=2 // you can change the values to see how price will vary for differnt specificaton
+}) #Price will be predicted for these specification area=1234, bedrooms=2, bathrooms=2 // you can change the values to see how price will vary for differnt specification
 
 new_pridiction = my_model.predict(new_data)
 print(f"\n\n User input/speification for the house:\n{new_data}\n")
 print(f"\nPrice for the user input/speification for the house:: {new_pridiction}\n")
+
+#Evaluation of the model
+mse = mean_squared_error(y_test,prediction)
+r2 = r2_score(y_test,prediction)
+
+print("\nMean_Squared_Error: ",mse)
+print("\nR^2 score: ",r2)
+print("\nCoefficients: ",my_model.coef_) #Represent the slope or m in equation "y=mx+c"
+print("\nIntercept: ",my_model.intercept_)
+
+# To find the accuracy for the model we can also use accuracy matrics
+
+
+# Accuracy = metrics.accuracy_score(actual_value, predicted_value) #change the variables with their respected: (actual_value, predicted_value) 
